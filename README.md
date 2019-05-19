@@ -27,9 +27,7 @@
 	- Distribuição Uniforme
 	- Tela Sobre
 	
- █▀▀█ █  █ █▀▀█ ▀▀█▀▀ █▀▀█ █▀▀▀ █▀▀█ █▀▀█ █▀▀█  █  █ 
- █▄▄█ █▀▀█ █  █   █   █  █ █ ▀█ █▄▄▀ █▄▄█ █  █  █▀▀█ 
- █    ▀  ▀ ▀▀▀▀   ▀   ▀▀▀▀ ▀▀▀▀ ▀ ▀▀ ▀  ▀ █▀▀▀  █  █ 
+# PhotograpH
 
  -[BR] PhotograpH foi um projeto desenvolvido no segundo ano da faculdade de Analise e Desenvolvimento de Sistemas na FATEC Franca, feito por Gabriel de Oliveira, 
 Leandro Souto de Paula e Matheus Cardoso, em um projeto para a disciplina de Estatística onde tinha como objetivo, criar um software em qualquer linguagem que 
@@ -44,49 +42,37 @@ At the time and with little knowledge, was done using VB .NET, now years after t
 with the knowledge we have today.
 
 
---------------------//--------------------//--------------------//--------------------//--------------------//--------------------//--------------------//--------------------//
-
-Começando - Getting Started
+## Começando - Getting Started
 
 -[BR] Faça o download do projeto, abra o index.html no seu navegador de internet e está pronto para uso.
 
 -[EN] Download the project, open index.html in your internet browser and it's ready to use.
 
 
---------------------//--------------------//--------------------//--------------------//--------------------//--------------------//--------------------//--------------------//
-
-Pré Requisitos - Prerequisites
+## Pré Requisitos - Prerequisites
 
 -[BR] Feito com componentes em que é necessário apenas ter um navegador de internet, você provavelmente não terá que instalar mais nada.
 
 -[EN] Made with components where it is only necessary to have a web browser, you probably will not have to install anything else.
 
 
---------------------//--------------------//--------------------//--------------------//--------------------//--------------------//--------------------//--------------------//
-
-
-Construído com - Built With
+## Construído com - Built With
 
 Bootstrap - [biblioteca de] Html,css, Js library.
 Basic concepts of Html, css, Js, jQuery.
 
 
---------------------//--------------------//--------------------//--------------------//--------------------//--------------------//--------------------//--------------------//
-
-Autores - Authors
+### Autores - Authors
 Originalmente - Originally
 	- Gabriel Oliveira
 	- Leandro Souto de Paula
 	- Matheus Cardoso
 	
-Agora - Now
+#### Agora - Now
 	- Gabriel Oliveira
 	- Leandro Souto de Paula
 
-License
-IN CONSTRUCTION
-
-Acknowledgments
+#### Agradecimentos - Acknowledgments
 -[BR] README feito baseado em modelo disponibilizado PurpleBooth, no repositório README-Template.md disponível em https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
 
 -[EN] README made based on available PurpleBooth template, in the README-Template.md repository available at https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
