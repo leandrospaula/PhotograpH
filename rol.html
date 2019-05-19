@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width" http-equiv="X-UA-Compatible">
+    <title>ON DEV - ROL</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            var numeros = [1, 2, 3, 10, 5];
+            $("#teste").html(numeros.toString());
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-7" style="border: 2px solid red">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label>Valores por ordem de inserção:</label>
+                        <textarea class="form-control" id="boxInsercao"></textarea>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <label>Valores ordenados:</label>
+                        <textarea class="form-control" id="boxOrdenado" disabled></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Elementos -->
+            <div class="col-sm-12 col-md-5" style="border: 2px solid green">
+
+                <div class="col-sm-12 col-md-12">
+                    <label for="exampleInputEmail1">Insira os elementos:</label>
+                    <input type="number" class="form-control" id="entradaNumero"
+                        placeholder="Aperte 'Enter' para enviar">
+                </div>
+
+                <div style="margin-top: 2vh;" class="col-sm-12">
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <a class="nav-item nav-link active" id="tabSimples" data-toggle="tab" href="#nav-simples"
+                                role="tab" aria-controls="nav-simples" aria-selected="true">Aleatório Simples</a>
+                            <a class="nav-item nav-link" id="tabSistematica" data-toggle="tab" href="#nav-sistematica"
+                                role="tab" aria-controls="nav-sistematica" aria-selected="false">Sistemática</a>
+                            <a class="nav-item nav-link" id="tabExtratificada" data-toggle="tab"
+                                href="#nav-extratificado" role="tab" aria-controls="nav-extratificado"
+                                aria-selected="false">Extratificado</a>
+                        </div>
+                    </nav>
+                    <div class="tab-content" id="abaRol">
+                        <div class="tab-pane fade show active" id="nav-simples" role="tabpanel"
+                            aria-labelledby="nav-simples">
+
+                            <div class="row">
+                                <span style="margin-right: 1vh">De</span>
+                                <input type="number" class="form-control" id="valorInicial" placeholder="0"
+                                    style="width: 10vh;margin-right: 1vh" />
+                                <span style="margin-right: 1vh">a</span>
+                                <input type="number" class="form-control" id="valorFinal" placeholder="0"
+                                    style="width: 10vh" />
+                            </div>
+                            <div class="row">
+                                <span style="margin-right: 1vh">Gerar</span>
+                                <input type="number" class="form-control" id="numAmostras" placeholder="0"
+                                style="width: 10vh;margin-right: 1vh" />
+                                <span style="margin-left: 1vh">amostras.</span>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="nav-sistematica" role="tabpanel"
+                            aria-labelledby="nav-sistematica">
+                            2</div>
+                        <div class="tab-pane fade" id="nav-extratificado" role="tabpanel"
+                            aria-labelledby="nav-extratificado">
+                            3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+</body>
+
+</html>
