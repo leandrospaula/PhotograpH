@@ -14,39 +14,8 @@
 
     <link href="default.css" rel="stylesheet" />
 
-    <script>
+    <script src="script.js"></script>
 
-        $(document).ready(function () {
-
-            var numbers = [1, 2];
-            numbers = [];
-            var ordened = [1, 2];
-            ordened = [];
-
-            $('#entradaNumero').on('keypress', function (e) {
-                if (e.which == 13) {
-                    var num = $('#entradaNumero').val();
-                    if (num == '') {
-                        $('#entradaNumero').addClass("error");
-                    } else {
-                        $('#entradaNumero').removeClass("error");
-                        numbers.push(num);
-                        $('#entradaNumero').val('');
-                        $('#boxInsercao').val(numbers.toString());
-                    }
-                }
-            });
-
-            $('#limpar').click(function (){
-                numbers = [];
-                ordened = [];
-                $('#entradaNumero').val('');
-                $('#boxInsercao').val(numbers.toString());
-            });
-
-        });
-
-    </script>
 </head>
 
 <body>
@@ -98,23 +67,37 @@
 
                             <div class="row">
                                 <span style="margin-right: 1vh">De</span>
-                                <input type="number" class="form-control" id="valorInicial" placeholder="0"
+                                <input type="number" class="form-control" id="startValue" placeholder="0"
                                     style="width: 10vh;margin-right: 1vh" />
                                 <span style="margin-right: 1vh">a</span>
-                                <input type="number" class="form-control" id="valorFinal" placeholder="0"
+                                <input type="number" class="form-control" id="endValue" placeholder="0"
                                     style="width: 10vh" />
                             </div>
                             <div class="row">
                                 <span style="margin-right: 1vh">Gerar</span>
-                                <input type="number" class="form-control" id="numAmostras" placeholder="0"
+                                <input type="number" class="form-control" id="elementNumber" placeholder="0"
                                     style="width: 10vh;margin-right: 1vh" />
                                 <span style="margin-left: 1vh">amostras.</span>
+                            </div>
+                            <div class="row">
+                                <button class="btn btn-outline-dark" id="randomButton">Aleatório</button>
+                                <button class="btn btn-outline-primary" id="noRepeatButton">Aleatório (sem
+                                    repetições)</button>
                             </div>
 
                         </div>
                         <div class="tab-pane fade" id="nav-sistematica" role="tabpanel"
                             aria-labelledby="nav-sistematica">
-                            2</div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <button class="btn btn-primary" id="sistematica">Sistematica</button>
+                                </div>
+                                <div class="col-md-1"></div>
+                                <div class="col-md-7">
+
+                                </div>
+                            </div>
+                        </div>
                         <div class="tab-pane fade" id="nav-extratificado" role="tabpanel"
                             aria-labelledby="nav-extratificado">
                             3</div>
