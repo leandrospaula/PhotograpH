@@ -14,7 +14,7 @@
 
     <link href="default.css" rel="stylesheet" />
 
-    <script src="script.js"></script>
+    <script src="rol.js"></script>
 
 </head>
 
@@ -56,9 +56,6 @@
                                 role="tab" aria-controls="nav-simples" aria-selected="true">Aleatório Simples</a>
                             <a class="nav-item nav-link" id="tabSistematica" data-toggle="tab" href="#nav-sistematica"
                                 role="tab" aria-controls="nav-sistematica" aria-selected="false">Sistemática</a>
-                            <a class="nav-item nav-link" id="tabExtratificada" data-toggle="tab"
-                                href="#nav-extratificado" role="tab" aria-controls="nav-extratificado"
-                                aria-selected="false">Extratificado</a>
                         </div>
                     </nav>
                     <div class="tab-content" id="abaRol">
@@ -84,8 +81,8 @@
                                 <button class="btn btn-outline-primary" id="noRepeatButton">Aleatório (sem
                                     repetições)</button>
                             </div>
-
                         </div>
+
                         <div class="tab-pane fade" id="nav-sistematica" role="tabpanel"
                             aria-labelledby="nav-sistematica">
                             <div class="row">
@@ -94,16 +91,88 @@
                                 </div>
                                 <div class="col-md-1"></div>
                                 <div class="col-md-7">
-
+                                    <div class="row">
+                                        <div class="col-md-6">Iniciando em</div>
+                                        <div class="col-md-6"><input class="form-control" placeholder="0" type="number"
+                                                id="sisStart"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">Intervalo</div>
+                                        <div class="col-md-6"><input class="form-control" placeholder="0" type="number"
+                                                id="sisInterval"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">Gerar</div>
+                                        <div class="col-md-6"><input class="form-control" placeholder="0" type="number"
+                                                id="sisNumber"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="nav-extratificado" role="tabpanel"
-                            aria-labelledby="nav-extratificado">
-                            3</div>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">Amostra Estratificada</div>
+            <br />
+            <div class="col-md-5" style="border: 2px solid blue;">
+                <div class="row">
+                    <div class="col-md-4">
+                        Inserir grupos:
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" class="form-control" placeholder="0" id="estratNum">
+                    </div>
+                    <div class="col-md-1">-</div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Ex: Carros" id="estratName">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        Amostras:
+                    </div>
+                    <div class="col-md-4">
+                        <input type="number" class="form-control" placeholder="0" id="estratAmostra">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        Porcentagem:
+                    </div>
+                    <div class="col-md-4">
+                        <input type="number" class="form-control" placeholder="0" id="estratPorcent">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <button class="btn btn-primary" id="proporcional">Amostras proporcionais</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-primary" id="uniforme">Amostra uniforme</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7" style="border: 2px solid orange;">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label>Grupos inseridos:</label>
+                        <textarea class="form-control" disabled id="estratValues"></textarea>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <label>Resultado:</label>
+                        <textarea class="form-control" disabled id="estratResult"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-primary" id="estratLimpa">Limpar</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
