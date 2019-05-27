@@ -5,6 +5,9 @@ $(document).ready(function () {
     var ordened = [];
     var estrat = []
     var result = [];
+    var fiSum = 0;
+    var variaSum = 0;
+    var media = 0;
 
     //On key press events
     $('#entradaNumero').on('keypress', function (e) {
@@ -32,6 +35,14 @@ $(document).ready(function () {
         $('#entradaNumero').val('');
         $('#boxInsercao').val(numbers.toString());
         $('#boxOrdenado').val(ordened.toString());
+        $('.disRow').remove();
+        $('#disMedia').val('');
+        $('#disModa').val('');
+        $('#disMediana').val('');
+        $('#disDP').val('');
+        $('#disCV').val('');
+        fiSum = 0;
+        variaSum = 0;
 
     });
 
@@ -217,4 +228,112 @@ $(document).ready(function () {
         }
     });
 
+
+    /*
+    TABLES SECTION CODES---------------------------------------------------------------------------------------------------------------------------------------------------
+    */
+
+    $('#btnDiscreta').click(function () {
+        if (ordened.length == 0) {
+            alert('Insira pelomenos 1 elmento acima para continuar');
+        } else {
+            $('.disRow').remove();
+            $('#disMedia').val('');
+            $('#disModa').val('');
+            $('#disMediana').val('');
+            $('#disDP').val('');
+            $('#disCV').val('');
+            var html;
+            var f = 0;
+            media = 0;
+            var moda = [0];
+            var modaValue = 0;
+            fiSum = 0;
+            variaSum = 0;
+
+
+            for (var i = 0; i < ordened.length; i++) {
+                media += parseInt(ordened[i]);
+            }
+
+            media = (media / ordened.length).toFixed(2);
+
+            for (var i = 0; i < ordened.length; i++) {
+                //Create a row object
+                var row = {
+                    Xi: 0,
+                    fi: 1,
+                    fr: 0,
+                    f: 0,
+                    fp: 0,
+                    xifi: 0,
+                    varia: 0
+                }
+
+                //Only add unique numbers
+                if (ordened[i] != ordened[i - 1]) {
+                    row.Xi = ordened[i];
+
+                    for (var j = i + 1; j < ordened.length; j++) {
+                        if (ordened[i] != ordened[j]) {
+                            j = ordened.length;
+                        } else {
+                            row.fi += 1;
+                        }
+                    }
+                    row.fr = (100 / ordened.length) * row.fi;
+                    f += row.fi;
+                    row.f = f;
+                    row.fp = (100 / ordened.length) * f;
+                    row.xifi = row.Xi * row.fi;
+                    row.varia = Math.pow((row.Xi - media), 2) * row.fi;
+                    variaSum += row.varia;
+                    fiSum += row.fi;
+
+                    html += '<tr class=\"disRow\"><th scope=\"row\">' + row.Xi + '</th><td>' + row.fi + '</td>'
+                        + '<td>' + row.fr.toFixed(2) + '%</td>'
+                        + '<td>' + row.f + '</td>'
+                        + '<td>' + row.fp.toFixed(2) + '%</td>'
+                        + '<td>' + row.xifi + '</td>'
+                        + '<td>' + row.varia.toFixed(4) + '</td>'
+                        + '</tr>'
+
+                    if (modaValue < row.fi) {
+                        moda = [];
+                        modaValue = row.fi;
+                        moda.push(row.Xi);
+                    } else if (modaValue == row.fi) {
+                        moda.push(row.Xi);
+                    }
+
+                }
+            }
+
+            $('#disMedia').val(media);
+            $('#disModa').val(moda.toString());
+            if (ordened.length % 2 == 0) {
+                $('#disMediana').val(ordened[ordened.length / 2] + ',' + ordened[(ordened.length / 2) - 1]);
+            } else {
+                $('#disMediana').val(ordened[Math.floor(ordened.length / 2)]);
+            }
+            $('#discretaBody').append(html);
+        }
+    });
+
+    $('#disPopulação').click(function () {
+        var dp = variaSum / fiSum;
+        dp = Math.pow(dp, 0.5)
+        $('#disDP').val(dp.toFixed(2));
+        $('#disCV').val(((dp / media) * 100).toFixed(2));
+    });
+
+    $('#disAmostra').click(function () {
+        var dp = variaSum / (fiSum-1);
+        dp = Math.pow(dp, 0.5)
+        $('#disDP').val(dp.toFixed(2));
+        $('#disCV').val(((dp / media) * 100).toFixed(2));
+    });
+
+
 });
+
