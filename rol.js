@@ -8,6 +8,7 @@ $(document).ready(function () {
     var fiSum = 0;
     var variaSum = 0;
     var media = 0;
+    var nClass = 0;
 
     //On key press events
     $('#entradaNumero').on('keypress', function (e) {
@@ -43,6 +44,7 @@ $(document).ready(function () {
         $('#disCV').val('');
         fiSum = 0;
         variaSum = 0;
+        $('.btClass').remove();
 
     });
 
@@ -328,10 +330,19 @@ $(document).ready(function () {
     });
 
     $('#disAmostra').click(function () {
-        var dp = variaSum / (fiSum-1);
+        var dp = variaSum / (fiSum - 1);
         dp = Math.pow(dp, 0.5)
         $('#disDP').val(dp.toFixed(2));
         $('#disCV').val(((dp / media) * 100).toFixed(2));
+    });
+
+    $('#tabContinua').click(function () {
+    
+        var classes = Math.floor(Math.pow(ordened.length, 0.5));
+
+        $('#1').text((classes-1) + ' classes');
+        $('#2').text((classes) + ' classes');
+        $('#3').text((classes+1) + ' classes');
     });
 
 
