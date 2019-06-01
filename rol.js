@@ -37,6 +37,7 @@ $(document).ready(function () {
         $('#boxInsercao').val(numbers.toString());
         $('#boxOrdenado').val(ordened.toString());
         $('.disRow').remove();
+        $('.conRow').remove();
         $('#disMedia').val('');
         $('#disModa').val('');
         $('#disMediana').val('');
@@ -337,12 +338,68 @@ $(document).ready(function () {
     });
 
     $('#tabContinua').click(function () {
-    
+
         var classes = Math.floor(Math.pow(ordened.length, 0.5));
 
-        $('#1').text((classes-1) + ' classes');
+        $('#1').text((classes - 1) + ' classes');
         $('#2').text((classes) + ' classes');
-        $('#3').text((classes+1) + ' classes');
+        $('#3').text((classes + 1) + ' classes');
+    });
+
+    $('#1').click(function () {
+
+        var classes = $('#1').text();
+        var html = '';
+        var intervalo = ordened[ordened.length - 1] - ordened[0];
+        media = 0;
+        var moda = [0];
+        var modaValue = 0;
+
+        //Confirmar, pois no código orignal era a soma dos xi.fi, e não dos valores
+        for (var i = 0; i < ordened.length; i++) {
+            media += parseInt(ordened[i]);
+        }
+
+        media = (media / ordened.length).toFixed(2);
+
+        if (parseInt(intervalo) % parseInt(classes) == 0) {
+            intervalo = parseInt(intervalo) / parseInt(classes);
+        } else {
+            intervalo = Math.floor(parseInt(intervalo) / parseInt(classes)) + 1;
+        }
+        var interInit = ordened[0];
+        var interEnd = ordened[0] + intervalo;
+        var F = 0;
+
+        for (var i = 1; i <= parseInt(classes); i++) {
+            html += '<tr class=\"conRow\"><th scope=\"row\">' + i + '</th>'
+                + '<td>' + interInit + ' |----- ' + interEnd + '</td>';
+
+            var fi = 0;
+            for (var j = 0; j < ordened.length; j++) {
+                if (ordened[j] >= interInit && ordened[j] < interEnd) {
+                    fi++;
+                }
+            }
+
+            html += '<td>' + fi + '</td>' + '<td>' + (fi * 100) / ordened.length + '</td>';
+            F += fi;
+            html += '<td>' + F + '</td><td>' + (F * 100) / ordened.length + '</td>'
+                + '<td>' + (interInit + interEnd) / 2 + '</td><td>' + ((interInit + interEnd) / 2) * fi + '</td>';
+
+
+            html += '</tr>';
+            interInit += intervalo;
+            interEnd += intervalo;
+        }
+
+        $('#conInterval').val(intervalo);
+        $('#conMedia').val(media);
+        // comModa
+        // comMediana
+        // comDP
+        // comCV
+        $('#continuaBody').append(html);
     });
 
 
