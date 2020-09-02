@@ -1,0 +1,31 @@
+header {
+    background-color: black;
+
+    .logo-bloco {
+        position: relative;
+        margin: 21px 0;
+        display: inline-block;
+
+        @media (max-width: 768px) {
+            position: absolute;
+            margin: 0 auto;
+            display: block;
+            max-width: 107px;
+            left: 0;
+            right: 0;
+            top: 0.8em;
+
+        }
+
+        img {
+            height: 35px;
+            width: auto;
+
+            @media (max-width: 768px) {
+                height: 22px;
+                width: auto;
+            }
+        }
+    }
+
+}

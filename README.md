@@ -1,6 +1,12 @@
 # PhotograpH
 
-#to-do
+Projeto finalizado, utilizando HTML, CSS, JS (Jquery, Node), Sass, Webpack.
+
+- Abra usando index.html
+
+# PhotograpH
+
+# to-do
 - Criar a Home
 - Criar Front de:
 	- ROL (grupo de números)

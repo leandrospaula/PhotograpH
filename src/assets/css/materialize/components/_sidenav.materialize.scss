@@ -1,0 +1,237 @@
+.sidenav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $sidenav-width;
+    height: 100%;
+    height: calc(100% + 60px);
+    height: -moz-calc(100%); //Temporary Firefox Fix
+    margin: 0;
+    padding-bottom: 60px;
+    background-color: $sidenav-bg-color;
+    transform: translateX(-100%);
+    transform: translateX(-105%);
+    z-index: 999;
+    overflow-y: auto;
+    will-change: transform;
+    backface-visibility: hidden;
+
+    @extend .z-depth-1;
+
+    // Right Align
+    &.right-aligned {
+        right: 0;
+        left: auto;
+        transform: translateX(105%);
+        transform: translateX(100%);
+    }
+
+    .collapsible {
+        margin: 0;
+    }
+
+    li {
+        float: none;
+        line-height: $sidenav-line-height;
+
+        &.active {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+    }
+
+    li > a {
+        display: block;
+        height: $sidenav-item-height;
+        padding: 0 ($sidenav-padding * 2);
+        font-size: $sidenav-font-size;
+        font-weight: 500;
+        color: $sidenav-font-color;
+        line-height: $sidenav-line-height;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        &.btn,
+        &.btn-large,
+        &.btn-flat,
+        &.btn-floating {
+            margin: 10px 15px;
+        }
+
+        &.btn,
+        &.btn-large,
+        &.btn-floating {
+            color: $button-raised-color;
+        }
+        &.btn-flat {
+            color: $button-flat-color;
+        }
+
+        &.btn:hover,
+        &.btn-large:hover {
+            background-color: lighten($button-raised-background, 5%);
+        }
+        &.btn-floating:hover {
+            background-color: $button-raised-background;
+        }
+
+        & > i,
+        & > [class^='mdi-'],
+        li > a > [class*='mdi-'],
+        & > i.material-icons {
+            float: left;
+            width: $sidenav-item-height / 2;
+            height: $sidenav-item-height;
+            margin: 0 ($sidenav-padding * 2) 0 0;
+            color: rgba(0, 0, 0, 0.54);
+            line-height: $sidenav-line-height;
+        }
+    }
+
+    .divider {
+        margin: ($sidenav-padding / 2) 0 0 0;
+    }
+
+    .subheader {
+        &:hover {
+            background-color: transparent;
+        }
+        font-size: $sidenav-font-size;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 0.54);
+        line-height: $sidenav-line-height;
+        cursor: initial;
+        pointer-events: none;
+    }
+
+    .user-view {
+        position: relative;
+        margin-bottom: $sidenav-padding / 2;
+        padding: ($sidenav-padding * 2) ($sidenav-padding * 2) 0;
+
+        & > a {
+            &:hover {
+                background-color: transparent;
+            }
+            height: auto;
+            padding: 0;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .circle,
+        .name,
+        .email {
+            display: block;
+        }
+
+        .circle {
+            width: 64px;
+            height: 64px;
+        }
+
+        .name,
+        .email {
+            font-size: $sidenav-font-size;
+            line-height: $sidenav-line-height / 2;
+        }
+
+        .name {
+            margin-top: 16px;
+            font-weight: 500;
+        }
+
+        .email {
+            padding-bottom: 16px;
+            font-weight: 400;
+        }
+    }
+}
+
+// Touch interaction
+.drag-target {
+    // Right Align
+    &.right-aligned {
+        right: 0;
+    }
+    position: fixed;
+    top: 0;
+    width: 10px;
+    height: 100%;
+    z-index: 998;
+}
+
+// Fixed Sidenav shown
+.sidenav.sidenav-fixed {
+    // Right Align
+    &.right-aligned {
+        right: 0;
+        left: auto;
+    }
+    position: fixed;
+    left: 0;
+    transform: translateX(0);
+}
+
+// Fixed Sidenav hide on smaller
+@media #{$medium-and-down} {
+    .sidenav {
+        &.sidenav-fixed {
+            transform: translateX(-105%);
+
+            &.right-aligned {
+                transform: translateX(105%);
+            }
+        }
+
+        > a {
+            padding: 0 $sidenav-padding;
+        }
+
+        .user-view {
+            padding: $sidenav-padding $sidenav-padding 0;
+        }
+    }
+}
+
+.sidenav .collapsible-body > ul:not(.collapsible) > li.active,
+.sidenav.sidenav-fixed .collapsible-body > ul:not(.collapsible) > li.active {
+    background-color: $primary-color;
+    a {
+        color: $sidenav-bg-color;
+    }
+}
+.sidenav .collapsible-body {
+    padding: 0;
+}
+
+.sidenav-overlay {
+    position: fixed;
+    top: 0;
+    right: 300px;
+    left: 0;
+    display: none;
+    height: 120vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: slideSidenav 0.3s ease-in-out;
+    opacity: 0;
+    z-index: 997;
+}
+
+@keyframes slideSidenav {
+    from {
+        right: 101vw;
+    }
+    to {
+        right: 300px;
+    }
+}

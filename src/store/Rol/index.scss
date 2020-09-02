@@ -1,0 +1,10 @@
+main {
+    max-width: 1248px;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+
+    @media (max-width: 1248px) {
+        max-width: 840px;
+    }
+}

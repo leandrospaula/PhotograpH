@@ -1,0 +1,274 @@
+//* Container
+$max-width-container: 1366px !default;
+$min-width-container: 290px !default;
+
+//* Colors
+$color-first: #373435 !default;
+$color-second: #ffcc29 !default;
+$color-third: #ed7d39 !default;
+$color-third--light: #ffad67 !default;
+$color-forty: #73234c !default;
+$color-fifth: #828282 !default;
+$color-fifth-light: #82828266 !default;
+$color-border: #e0e0e0 !default;
+$color-bg: #e5e5e5 !default;
+$color-cta: #219653 !default;
+$color-cta-hover: #27ae60 !default;
+$color-error: #eb5757 !default;
+
+// colors checkout
+$ck-color-first: #ed3237;
+$ck-color-third: #626670;
+$ck-color-bg: #f5f5f1;
+$ck-color-fifth: #27ae60;
+$ck-color-fourty: #727273;
+
+$principal: #626670;
+$hover: #ed3237;
+$detalhes: #27ffff;
+$branco: #ffffff;
+$cinza: #f2f2f2;
+
+//* Fonts
+$font-family-first: 'Open Sans', 'Muli', sans-serif !global;
+$font-family-regular-first: 400 !global;
+$font-family-bold-first: 700 !global;
+
+//* Placeholders
+%href-link {
+    color: $color-first;
+    text-decoration: none;
+    transition: all 0.2s ease;
+
+    &:focus,
+    &:hover {
+        color: $color-third;
+        text-decoration: none;
+    }
+
+    &:focus,
+    &:visited,
+    &:active {
+        outline: none;
+    }
+}
+
+%button {
+    border: none;
+    border-radius: 0;
+    font-family: $font-family-first;
+    font-size: 18px;
+    font-weight: $font-family-bold-first;
+    text-align: center;
+    line-height: normal;
+    cursor: pointer;
+
+    &:focus,
+    &:visited,
+    &:active {
+        outline: none;
+    }
+}
+
+%button-reset {
+    padding: 0;
+    border: none;
+    border-radius: 5px;
+    box-shadow: none;
+    background: transparent;
+
+    &:hover,
+    &:focus,
+    &:visited,
+    &:active {
+        background: transparent;
+    }
+}
+
+// %button-color {
+//     @extend %button;
+//     background: $color-second;
+//     color: $color-first;
+
+//     &:hover,
+//     &:focus,
+//     &:visited,
+//     &:active {
+//         background: $color-first;
+//         color: #ffffff;
+//     }
+// }
+%button-cta {
+    @extend %button;
+    border-radius: 5px;
+    background-color: $color-cta;
+    color: #fff;
+
+    &:hover,
+    &:focus,
+    &:visited,
+    &:active {
+        background: $color-cta-hover;
+    }
+}
+
+%is-hidden {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+//* Mixins
+@mixin font-smoothing($aliasing: antialiased) {
+    @if $aliasing==antialiased {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    } @else {
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: auto;
+    }
+}
+
+@mixin is-hidden() {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+@mixin is-invisible() {
+    visibility: hidden;
+}
+
+//? Dimensions
+@mixin width-percent($container, $width, $important: false) {
+    @if $important==false {
+        width: (($width * 100) / $container) * 1%;
+    } @else {
+        width: (($width * 100) / $container) * 1% !important;
+    }
+}
+
+@mixin margin-percent(
+    $container,
+    $width-top,
+    $width-right,
+    $width-bottom,
+    $width-left,
+    $important: false
+) {
+    @if $important==false {
+        margin: ((($width-top * 100) / $container) * 1%)
+            ((($width-right * 100) / $container) * 1%)
+            ((($width-bottom * 100) / $container) * 1%)
+            ((($width-left * 100) / $container) * 1%);
+    } @else {
+        margin: ((($width-top * 100) / $container) * 1%)
+            ((($width-right * 100) / $container) * 1%)
+            ((($width-bottom * 100) / $container) * 1%)
+            ((($width-left * 100) / $container) * 1%) !important;
+    }
+}
+
+@mixin margin-right-percent($container, $width, $important: false) {
+    @if $important==false {
+        margin-right: (($width * 100) / $container) * 1%;
+    } @else {
+        margin-right: (($width * 100) / $container) * 1% !important;
+    }
+}
+
+@mixin margin-left-percent($container, $width, $important: false) {
+    @if $important==false {
+        margin-left: (($width * 100) / $container) * 1%;
+    } @else {
+        margin-left: (($width * 100) / $container) * 1% !important;
+    }
+}
+
+@mixin margin-top-percent($container, $width, $important: false) {
+    @if $important==false {
+        margin-top: (($width * 100) / $container) * 1%;
+    } @else {
+        margin-top: (($width * 100) / $container) * 1% !important;
+    }
+}
+
+@mixin padding-right-percent($container, $width, $important: false) {
+    @if $important==false {
+        padding-right: (($width * 100) / $container) * 1%;
+    } @else {
+        padding-right: (($width * 100) / $container) * 1% !important;
+    }
+}
+
+@mixin padding-left-percent($container, $width, $important: false) {
+    @if $important==false {
+        padding-left: (($width * 100) / $container) * 1%;
+    } @else {
+        padding-left: (($width * 100) / $container) * 1% !important;
+    }
+}
+
+@mixin padding-bottom-percent($container, $width, $important: false) {
+    @if $important==false {
+        padding-bottom: (($width * 100) / $container) * 1%;
+    } @else {
+        padding-bottom: (($width * 100) / $container) * 1% !important;
+    }
+}
+
+@mixin padding-percent($container, $width, $important: false) {
+    @if $important==false {
+        padding: (($width * 100) / $container) * 1%;
+    } @else {
+        padding: (($width * 100) / $container) * 1% !important;
+    }
+}
+
+@mixin position-right-percent($container, $width, $important: false) {
+    @if $important==false {
+        right: (($width * 100) / $container) * 1%;
+    } @else {
+        right: (($width * 100) / $container) * 1% !important;
+    }
+}
+
+@mixin position-left-percent($container, $width, $important: false) {
+    @if $important==false {
+        left: (($width * 100) / $container) * 1%;
+    } @else {
+        left: (($width * 100) / $container) * 1% !important;
+    }
+}
+
+//* Functions
+@function z-index($key1, $key2: null) {
+    $map: $z-indexes;
+    $found-index: null;
+
+    @if (map-has-key($map, $key1)) {
+        $found-index: index(map-keys($map), $key1);
+
+        @if ($key2) {
+            $map: map-get($map, $key1);
+            $found-index: index($map, $key2);
+        }
+    }
+
+    @return $found-index;
+}
+
+@function z($key1, $key2: null) {
+    @return z-index($key1, $key2);
+}
+
+$z-indexes: (
+    header: (
+        topbar,
+        salesforce,
+    ),
+    main: (
+        foo,
+        bar,
+        tooltip,
+    ),
+    modal: (),
+);

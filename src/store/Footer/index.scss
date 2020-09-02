@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,600,700,900&display=swap');
+
+
+$cores: (fundoBranco: #fff,
+    fundoPreto: #000,
+    botaoPreto: #000,
+    botaoBranco: #fff,
+    dotAtivo: #F8475F,
+    dotInativo: #BDBDBD,
+    fonteBranca: #fff,
+    fontePreta: #000,
+    fonteCinza: #7A7A7A);
+
+$tablet: 1248px;
+$mobile: 768px;
+$small: 425px;
+
+@mixin tablet {
+    @media (max-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$mobile}) {
+        @content;
+    }
+}
+
+@mixin small {
+    @media (max-width: #{$small}) {
+        @content;
+    }
+}
+
+footer {
+    background-color: map-get($map: $cores, $key: fundoPreto);
+    padding: 21px 0 !important;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    a {
+        font-family: Nunito, sans-serif;
+        margin: 0 0 0.3em 0;
+    }
+
+    h1 {
+        font-weight: 900;
+        font-style: normal;
+        font-size: 20px;
+    }
+
+    p {
+        color: white;
+    }
+
+    main {
+        max-width: 1248px;
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
+
+        @media (max-width: 1248px) {
+            max-width: 840px;
+        }
+
+        .widget-footer-out {
+            display: flex;
+            max-width: 100%;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            margin: 0 49px;
+
+            .widget-footer {
+                max-width: 328px;
+                flex-basis: 100%;
+                margin: auto 0;
+                position: relative;
+
+                @include tablet {
+                    flex-basis: 50%;
+                }
+
+                @include small {
+                    flex-basis: 100%;
+                    text-align: none;
+                }
+
+                .widget-footer-titulo {
+                    margin-bottom: 30px;
+
+                    h1 {
+                        color: #fff;
+                        margin: 0;
+                    }
+
+                    &:after {
+                        content: "";
+                        background: #fff;
+                        width: 65px;
+                        height: 4.29723px;
+                        position: absolute;
+                        margin-top: 4px;
+                    }
+                }
+
+                .footer-bloco-botoes {
+                    margin: 50px 0;
+
+                    .botao-link {
+                        text-decoration: none;
+                    }
+
+                    .footer-botao {
+                        background: map-get($map: $cores, $key: fundoBranco);
+                        width: 195px;
+                        height: 38px;
+                        border-radius: 5px;
+                        margin: 0 auto 25px;
+                        display: table;
+                        transition: 0.3s all;
+
+                        img {
+                            display: table-cell;
+                            position: relative;
+                            margin: 12px 12px 0;
+                        }
+
+                        p {
+                            color: #000;
+                            text-transform: uppercase;
+                            display: table-cell;
+                            font-size: 12px;
+                            line-height: 100%;
+                            font-weight: 600;
+                            max-width: 127px;
+                            margin: 0;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+
+                .footer-logo {
+                    margin: auto 0;
+                    float: right;
+
+                    .h1-gooter-logo {
+                        margin-bottom: 30px;
+
+                        &:after {
+                            content: "";
+                            background: #fff;
+                            width: 65px;
+                            height: 4.29723px;
+                            position: absolute;
+                            margin-top: 4px;
+                        }
+
+                        h1 {
+                            color: #fff;
+                            margin: 0;
+                        }
+                    }
+
+                    .logo-powered {
+                        width: 35px;
+                    }
+
+                    .text-link-git {
+                        display: flex;
+                    }
+
+                    .link-git {
+                        color: white;
+                        margin: auto 0;
+                        margin-left: 5px;
+                    }
+
+                }
+            }
+        }
+    }
+
+    .copyright {
+        text-align: center;
+    }
+}
