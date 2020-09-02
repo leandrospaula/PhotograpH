@@ -21,3 +21,4 @@ critical/
 .history
 .temp
 .vscode
+node_modules
