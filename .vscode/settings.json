@@ -1,0 +1,40 @@
+{
+    "editor.formatOnSave": true,
+    "eslint.autoFixOnSave": true,
+    "eslint.validate": [
+        {
+            "language": "javascript",
+            "autoFix": true
+        },
+        {
+            "language": "javascriptreact",
+            "autoFix": true
+        },
+        {
+            "language": "typescript",
+            "autoFix": true
+        },
+        {
+            "language": "typescriptreact",
+            "autoFix": true
+        }
+    ],
+
+    // Aplica um sinal visual na esquerda da linha selecionada
+    "editor.renderLineHighlight": "gutter",
+
+    // Define o tema dos ícones na sidebar
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4,
+    "emmet.syntaxProfiles": {
+        "javascript": "jsx",
+        "nunjucks": "html"
+    },
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact",
+        "nunjucks": "html"
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    }
+}
