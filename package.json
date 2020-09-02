@@ -1,6 +1,6 @@
 {
     "name": "PhotograpH",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Project PhotograpH",
     "scripts": {
         "store-dev": "cross-env NODE_ENV=development webpack --config ./config/store/webpack.config.dev.js --display-error-details --watch",
