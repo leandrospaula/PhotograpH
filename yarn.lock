@@ -2,14 +2,6 @@
 # yarn lockfile v1
 
 
-"@ClickQi/clickqi-apps-lazyload@git+https://git-clickqi:bfKGnknsGDkKdPu58sRp@bitbucket.org/ClickQI/clickqi-apps-lazyload.git":
-  version "1.0.7"
-  resolved "git+https://git-clickqi:bfKGnknsGDkKdPu58sRp@bitbucket.org/ClickQI/clickqi-apps-lazyload.git#33c733215d786d9c6e66398e1dfe2e6a685d2961"
-
-"@ClickQi/clickqi-apps-menu@git+https://git-clickqi:bfKGnknsGDkKdPu58sRp@bitbucket.org/ClickQI/clickqi-apps-menu.git":
-  version "1.0.0"
-  resolved "git+https://git-clickqi:bfKGnknsGDkKdPu58sRp@bitbucket.org/ClickQI/clickqi-apps-menu.git#8e83b734618233b90867bbcd6449df954bd43883"
-
 "@babel/code-frame@7.5.5":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.5.5.tgz#bc0782f6d69f7b7d49531219699b988f669a8f9d"
@@ -1192,9 +1184,9 @@ acorn-walk@^6.1.1:
   integrity sha512-7evsyfH1cLOCdAzZAd43Cic04yKydNx0cF+7tiA19p1XnLLPU4dpCQOqpjqwokFe//vS0QqfqqjCS2JkiIs0cA==
 
 acorn@^6.0.7, acorn@^6.2.1:
-  version "6.4.0"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.4.0.tgz#b659d2ffbafa24baf5db1cdbb2c94a983ecd2784"
-  integrity sha512-gac8OEcQ2Li1dxIEWGZzsp2BitJxwkwcOm0zHAJLcPJaVvm58FRnk6RkuLRpU1EujipU2ZFODv2P9DLMfnV8mw==
+  version "6.4.1"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.4.1.tgz#531e58ba3f51b9dacb9a6646ca4debf5b14ca474"
+  integrity sha512-ZVA9k326Nwrj3Cj9jlh3wGFutC2ZornPNARZwsNYqQYgN0EsV2d53w5RN/co65Ohn4sUAUtb1rSUAOD6XN9idA==
 
 address@1.1.2, address@^1.0.1:
   version "1.1.2"
@@ -2627,6 +2619,11 @@ builtin-status-codes@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
   integrity sha1-hZgoeOIbmOHGZCXgPQF0eI9Wnug=
+
+bulma@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/bulma/-/bulma-0.9.0.tgz#948c5445a49e9d7546f0826cb3820d17178a814f"
+  integrity sha512-rV75CJkubNUroAt0qCRkjznZLoaXq/ctfMXsMvKSL84UetbSyx5REl96e8GoQ04G4Tkw0XF3STECffTOQrbzOQ==
 
 bytes@1:
   version "1.0.0"
