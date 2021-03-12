@@ -71,7 +71,7 @@
         "md5-file": "^4.0.0",
         "numeral": "^2.0.6",
         "react": "^16.10.2",
-        "react-dev-utils": "^9.1.0",
+        "react-dev-utils": "^11.0.4",
         "react-dom": "^16.10.2",
         "react-input-mask": "^2.0.4",
         "react-slick": "^0.25.2",
