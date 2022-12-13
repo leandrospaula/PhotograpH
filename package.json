@@ -64,7 +64,7 @@
         "bulma": "^0.9.0",
         "compass-mixins": "^0.12.10",
         "cross-env": "^5.2.1",
-        "express": "^4.17.1",
+        "express": "^4.17.3",
         "formik": "^1.5.0",
         "fs": "0.0.1-security",
         "js-cookie": "^2.2.1",
